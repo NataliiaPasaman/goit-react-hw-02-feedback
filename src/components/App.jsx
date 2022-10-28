@@ -26,11 +26,9 @@ export class App extends Component {
         }}
       >
 
-        <FeedbackWidget />
+        <FeedbackWidget feedback={this.state} />
         <Statistics />
       </div>
     );
   }
 }
-
-
