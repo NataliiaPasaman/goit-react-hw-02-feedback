@@ -1,3 +1,6 @@
+import { FeedbackWidget } from "./FeedbackWidget/feedbackWidget.jsx";
+
+
 export const App = () => {
   return (
     <div
@@ -10,7 +13,9 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <FeedbackWidget />
     </div>
   );
 };
+
+
