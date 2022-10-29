@@ -1,7 +1,6 @@
-import { Component } from "react";
-import { FeedbackWidget } from "./FeedbackWidget/FeedbackWidget.jsx";
-import { Statistics } from "./Statistics/Statistics.jsx";
-
+import { Component } from 'react';
+import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget.jsx';
+import { Statistics } from './Statistics/Statistics.jsx';
 
 export class App extends Component {
   constructor() {
@@ -12,6 +11,24 @@ export class App extends Component {
       bad: 0,
     };
   }
+
+  addFeedbackGood = () => {
+    this.setState(prevState => {
+      return { good: prevState.good + 1 };
+    });
+  };
+
+  addFeedbackNeutral = () => {
+    this.setState(prevState => {
+      return { neutral: prevState.neutral + 1 };
+    });
+  };
+
+  addFeedbackBad = () => {
+    this.setState(prevState => {
+      return { bad: prevState.bad + 1 };
+    });
+  };
 
   render() {
     return (
@@ -25,9 +42,13 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-
-        <FeedbackWidget feedback={this.state} />
-        <Statistics />
+        <FeedbackWidget
+          feedback={this.state}
+          addGood={this.addFeedbackGood}
+          addNeutral={this.addFeedbackNeutral}
+          addBad={this.addFeedbackBad}
+        />
+        <Statistics feedback={this.state} />
       </div>
     );
   }
