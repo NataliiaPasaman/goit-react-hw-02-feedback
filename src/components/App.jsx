@@ -28,7 +28,7 @@ export class App extends Component {
     const { good } = this.state;
     const total = this.countTotalFeedback();
     
-    const positivePercentage = ((good * 100) / total).toFixed();
+    const positivePercentage = Number(((good * 100) / total).toFixed());
     return positivePercentage;
   }
 
@@ -57,3 +57,12 @@ export class App extends Component {
     );
   }
 }
+
+/**Виконай рефакторинг застосунку. Стан застосунку повинен залишатися у 
+ * кореневому компоненті <App>.
+
+Винеси відображення статистики в окремий компонент <Statistics good={} neutral={} 
+bad={} total={} positivePercentage={}>.
+Винеси блок кнопок в компонент <FeedbackOptions options={} onLeaveFeedback={}>.
+Створи компонент <Section title="">, який рендерить секцію із заголовком і дітей (children). 
+Обгорни кожен із <Statistics> і <FeedbackOptions> у створений компонент секції. */
