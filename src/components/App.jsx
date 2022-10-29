@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget.jsx';
-import { Statistics } from './Statistics/Statistics.jsx';
+import { FeedbackWidget } from 'components/FeedbackWidget/FeedbackWidget.jsx';
+import { Statistics } from 'components/Statistics/Statistics.jsx';
 
 export class App extends Component {
   constructor() {
@@ -53,3 +53,11 @@ export class App extends Component {
     );
   }
 }
+
+
+/** Розшир функціонал застосунку таким чином, щоб в інтерфейсі відображалося більше 
+ * статистики про зібрані відгуки. 
+ * Додай відображення загальної кількості зібраних відгуків з усіх категорій та
+ * відсоток позитивних відгуків. Для цього створи допоміжні методи countTotalFeedback()
+ *  і countPositiveFeedbackPercentage(), які підраховують ці значення, ґрунтуючись 
+ * на даних у стані (обчислювані дані). */
