@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { FeedbackWidget } from 'components/FeedbackWidget/FeedbackWidget.jsx';
-import { Statistics } from 'components/Statistics/Statistics.jsx';
+import { FeedbackWidget } from 'components/FeedbackWidget/FeedbackWidget';
+import { Statistics } from 'components/Statistics/Statistics';
 
 export class App extends Component {
   constructor() {
