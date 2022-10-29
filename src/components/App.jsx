@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 
 import { Section } from './Section/Section';
@@ -14,7 +14,7 @@ export class App extends Component {
     };
   }
 
-  addFeedback = event => {
+  onLeaveFeedback = event => {
     this.setState(prevState => {
       return { [event.target.name]: prevState[event.target.name] + 1 };
     });
@@ -46,9 +46,9 @@ export class App extends Component {
         }}
       >
         <Section title="Please leave feedback">
-          <FeedbackWidget
-            feedback={this.state}
-            addFeedback={this.addFeedback}
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
 
