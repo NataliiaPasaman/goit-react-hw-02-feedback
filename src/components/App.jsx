@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { FeedbackWidget } from 'components/FeedbackWidget/FeedbackWidget';
-import { Statistics } from 'components/Statistics/Statistics';
+import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget';
+import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
   constructor() {
@@ -18,6 +18,20 @@ export class App extends Component {
     });
   };
 
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    const total = good + neutral + bad;
+      return total;
+  }
+
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    const total = this.countTotalFeedback();
+    
+    const positivePercentage = ((good * 100) / total).toFixed();
+    return positivePercentage;
+  }
+
   render() {
     return (
       <div
@@ -34,16 +48,12 @@ export class App extends Component {
           feedback={this.state}
           addFeedback={this.addFeedback}
         />
-        <Statistics feedback={this.state} />
+        <Statistics 
+        feedback={this.state} 
+        totalFeedback={this.countTotalFeedback}
+        goodPercentage={this.countPositiveFeedbackPercentage}
+        />
       </div>
     );
   }
 }
-
-
-/** Розшир функціонал застосунку таким чином, щоб в інтерфейсі відображалося більше 
- * статистики про зібрані відгуки. 
- * Додай відображення загальної кількості зібраних відгуків з усіх категорій та
- * відсоток позитивних відгуків. Для цього створи допоміжні методи countTotalFeedback()
- *  і countPositiveFeedbackPercentage(), які підраховують ці значення, ґрунтуючись 
- * на даних у стані (обчислювані дані). */
