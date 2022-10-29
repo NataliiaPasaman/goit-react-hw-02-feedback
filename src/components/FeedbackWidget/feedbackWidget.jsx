@@ -5,7 +5,6 @@ import css from 'components/FeedbackWidget/FeedbackWidget.module.css';
 export const FeedbackWidget = ({ feedback, addFeedback }) => {
     return (
       <div>
-        <h2>Please leave feedback</h2>
         <button className={css.button} type="button" name='good' onClick={addFeedback}>good</button>
         <button className={css.button} type="button" name='neutral' onClick={addFeedback}>neutral</button>
         <button className={css.button} type="button" name='bad' onClick={addFeedback}>bad</button>

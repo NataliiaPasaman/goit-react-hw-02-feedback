@@ -11,8 +11,6 @@ export const Statistics = ({
   const totalFeedbacks = totalFeedback();
   const goodPercentage = positivePercentage();
   return (
-    <>
-      <h2>Statistics</h2>
       <ul>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
@@ -20,7 +18,6 @@ export const Statistics = ({
         <li>Total: {totalFeedbacks}</li>
         <li>Positive feedback: {goodPercentage || 0}%</li>
       </ul>
-    </>
   );
 };
 

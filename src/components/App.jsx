@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget';
 import { Statistics } from './Statistics/Statistics';
 
+import { Section } from './Section/Section';
+
 export class App extends Component {
   constructor() {
     super();
@@ -43,22 +45,23 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <FeedbackWidget feedback={this.state} addFeedback={this.addFeedback} />
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          totalFeedback={this.countTotalFeedback}
-          positivePercentage={this.countPositiveFeedbackPercentage}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackWidget
+            feedback={this.state}
+            addFeedback={this.addFeedback}
+          />
+        </Section>
+
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            totalFeedback={this.countTotalFeedback}
+            positivePercentage={this.countPositiveFeedbackPercentage}
+          />
+        </Section>
       </div>
     );
   }
 }
-
-/**Виконай рефакторинг застосунку. Стан застосунку повинен залишатися у 
- * кореневому компоненті <App>.
-
-Винеси блок кнопок в компонент <FeedbackOptions options={} onLeaveFeedback={}>.
-Створи компонент <Section title="">, який рендерить секцію із заголовком і дітей (children). 
-Обгорни кожен із <Statistics> і <FeedbackOptions> у створений компонент секції. */
