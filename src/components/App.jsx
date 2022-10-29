@@ -12,21 +12,9 @@ export class App extends Component {
     };
   }
 
-  addFeedbackGood = () => {
+  addFeedback = (event) => {
     this.setState(prevState => {
-      return { good: prevState.good + 1 };
-    });
-  };
-
-  addFeedbackNeutral = () => {
-    this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-
-  addFeedbackBad = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
+      return { [event.target.name]: prevState[event.target.name] + 1 };
     });
   };
 
@@ -44,9 +32,7 @@ export class App extends Component {
       >
         <FeedbackWidget
           feedback={this.state}
-          addGood={this.addFeedbackGood}
-          addNeutral={this.addFeedbackNeutral}
-          addBad={this.addFeedbackBad}
+          addFeedback={this.addFeedback}
         />
         <Statistics feedback={this.state} />
       </div>
