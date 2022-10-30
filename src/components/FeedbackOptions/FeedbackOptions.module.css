@@ -1,0 +1,60 @@
+
+.btn__feedback {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    padding: 7px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: darkcyan;
+    color: white;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: center;
+
+    transform: scale(1);
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+    border: 300ms ease-out;
+
+}
+
+.btn__feedback:not(:last-child) {
+    margin-right: 15px;
+}
+
+.btn__feedback:hover,
+.btn__feedback:focus {
+    background-color: mediumseagreen;
+    transform: scale(1.10);
+    border: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.btn__feedback_good:hover,
+.btn__feedback_good:focus {
+    background-color: mediumseagreen;
+    transform: scale(1.10);
+    border: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn__feedback_neutral:hover,
+.btn__feedback_neutral:focus {
+    background-color: lightsalmon;
+    transform: scale(1.10);
+    border: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn__feedback_bad:hover,
+.btn__feedback_bad:focus {
+    background-color: tomato;
+    transform: scale(1.10);
+    border: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
