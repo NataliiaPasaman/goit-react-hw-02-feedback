@@ -7,7 +7,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       <div className={css.container__feedback}>
         <button type="button" 
           className={css.btn__feedback}
-          // className={css.btn__feedback && css.btn__feedback_good}
           name='good' 
           onClick={onLeaveFeedback}>Good</button>
         <button type="button" 
