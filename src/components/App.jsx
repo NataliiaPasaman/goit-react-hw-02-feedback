@@ -37,10 +37,9 @@ export class App extends Component {
     return (
       <div
         style={{
+          backgroundColor: 'antiquewhite',
           height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          padding: '25px',
           fontSize: 40,
           color: '#010101',
         }}
