@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
-
 import { Section } from './Section/Section';
 
 export class App extends Component {
@@ -38,7 +37,6 @@ export class App extends Component {
       <div
         style={{
           backgroundColor: 'antiquewhite',
-          height: '100vh',
           padding: '25px',
           fontSize: 40,
           color: '#010101',
