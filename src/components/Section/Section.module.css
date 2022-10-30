@@ -1,10 +1,11 @@
 .section {
     outline: 1px solid rebeccapurple;
     padding: 15px;
+    margin-bottom: 20px;
 }
 
 .title {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 42px;
     font-style: italic;
     font-weight: 500;
