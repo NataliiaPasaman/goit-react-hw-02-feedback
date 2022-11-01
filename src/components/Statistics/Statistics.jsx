@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import css from 'components/Statistics/Statistics.module.css';
-import { Notification } from 'components/Notification/Notification';
 
 
 export const Statistics = ({
@@ -14,7 +13,7 @@ export const Statistics = ({
   const totalFeedbacks = totalFeedback();
   const goodPercentage = positivePercentage();
 
-  return totalFeedbacks !== 0 ? (
+  return (
     <ul>
       <li className={css.statistics__item}>Good: {good}</li>
       <li className={css.statistics__item}>Neutral: {neutral}</li>
@@ -24,9 +23,7 @@ export const Statistics = ({
         Positive feedback: {goodPercentage || 0}%
       </li>
     </ul>
-  ) : (
-    <Notification message="There is no feedback" />
-  );
+    );
 };
 
 Statistics.propypes = {
